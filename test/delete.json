@@ -1,0 +1,22 @@
+{
+  "method": "DELETE",
+  "defaultTests": {
+    "authentication": true,
+    "securityMisconfiguration": true,
+    "injection": true,
+    "exceptionHandling": true
+  },
+  "endpoints": [
+    {
+      "path": "/api/items/:id",
+      "description": "Delete an existing item by ID",
+      "authMode": "public"
+    }
+  ],
+  "accessControl": {
+    "enabled": false,
+    "authorizedTokenEnv": "VIBESHIELD_ADMIN_TOKEN",
+    "unauthorizedTokenEnv": "VIBESHIELD_USER_TOKEN",
+    "endpoints": []
+  }
+}

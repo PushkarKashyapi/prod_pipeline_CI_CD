@@ -1,0 +1,37 @@
+{
+  "method": "GET",
+  "defaultTests": {
+    "authentication": true,
+    "securityMisconfiguration": true,
+    "injection": true,
+    "exceptionHandling": true
+  },
+  "endpoints": [
+    {
+      "path": "/",
+      "description": "Root endpoint",
+      "authMode": "public"
+    },
+    {
+      "path": "/health",
+      "description": "Health check endpoint",
+      "authMode": "public"
+    },
+    {
+      "path": "/api/items",
+      "description": "Retrieve all items",
+      "authMode": "public"
+    },
+    {
+      "path": "/api/items/:id",
+      "description": "Retrieve an item by ID",
+      "authMode": "public"
+    }
+  ],
+  "accessControl": {
+    "enabled": false,
+    "authorizedTokenEnv": "VIBESHIELD_ADMIN_TOKEN",
+    "unauthorizedTokenEnv": "VIBESHIELD_USER_TOKEN",
+    "endpoints": []
+  }
+}

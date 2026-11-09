@@ -1,0 +1,34 @@
+{
+  "method": "PUT",
+  "defaultTests": {
+    "authentication": true,
+    "securityMisconfiguration": true,
+    "injection": true,
+    "exceptionHandling": true,
+    "logging": true
+  },
+  "endpoints": [
+    {
+      "path": "/api/items/:id",
+      "description": "Update an existing item",
+      "authMode": "public"
+    }
+  ],
+  "accessControl": {
+    "enabled": false,
+    "authorizedTokenEnv": "VIBESHIELD_ADMIN_TOKEN",
+    "unauthorizedTokenEnv": "VIBESHIELD_USER_TOKEN",
+    "endpoints": []
+  },
+  "cryptographicHashing": {
+    "enabled": false,
+    "checks": {
+      "passwordHashingAlgorithm": false,
+      "uniqueSaltPerPassword": false,
+      "passwordNotStoredInPlaintext": false,
+      "passwordHashNotReturnedInResponse": false,
+      "passwordNotExposedInLogs": false
+    },
+    "endpoints": []
+  }
+}
